@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { TextField, Button, Checkbox, FormControlLabel, Radio, RadioGroup, FormControl, InputLabel, Select, MenuItem, Switch, Slider, IconButton, InputAdornment } from '@mui/material';
-import { Visibility, VisibilityOff, Facebook, Google, GitHub } from '@mui/icons-material';
+import LoginForm from './LoginForm';  // Add this import
+import SignupForm from './SignupForm'; // Add this import
+import { IconButton } from '@mui/material';
+import { Facebook, Google, GitHub } from '@mui/icons-material';
 import { FaTwitter } from 'react-icons/fa';
+import './AuthForms.css';
 
 const AuthForms = () => {
   const [isLogin, setIsLogin] = useState(true);

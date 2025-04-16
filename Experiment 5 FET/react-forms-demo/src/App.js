@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import AuthForms from './AuthForms';
+import AuthForms from './components/AuthForms/AuthForms';
 import './AuthForms.css';
 
 function App() {

@@ -21,14 +21,15 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
-// Employee Schema
-const employeeSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  position: { type: String, required: true },
-  salary: { type: Number, required: true },
+// Appointment Schema
+const appointmentSchema = new mongoose.Schema({
+  patientName: { type: String, required: true },
+  doctorName: { type: String, required: true },
+  appointmentDate: { type: Date, required: true },
+  symptoms: { type: String }
 });
 
-const Employee = mongoose.model('Employee', employeeSchema);
+const Appointment = mongoose.model('Appointment', appointmentSchema);
 
 // User Schema for Authentication
 const userSchema = new mongoose.Schema({
@@ -80,62 +81,62 @@ const authenticate = (req, res, next) => {
   }
 };
 
-// CRUD operations for Employees
+// CRUD operations for Appointments
 
-// Create a new employee
-app.post('/employees', authenticate, async (req, res) => {
-  const { name, position, salary } = req.body;
-  const newEmployee = new Employee({ name, position, salary });
+// Create a new appointment
+app.post('/appointments', authenticate, async (req, res) => {
+  const { patientName, doctorName, appointmentDate, symptoms } = req.body;
+  const newAppointment = new Appointment({ patientName, doctorName, appointmentDate, symptoms });
 
   try {
-    const savedEmployee = await newEmployee.save();
-    res.status(201).json(savedEmployee);
+    const savedAppointment = await newAppointment.save();
+    res.status(201).json(savedAppointment);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// Get all employees
-app.get('/employees', authenticate, async (req, res) => {
+// Get all appointments
+app.get('/appointments', authenticate, async (req, res) => {
   try {
-    const employees = await Employee.find();
-    res.status(200).json(employees);
+    const appointments = await Appointment.find();
+    res.status(200).json(appointments);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// Get employee by ID
-app.get('/employees/:id', authenticate, async (req, res) => {
+// Get appointment by ID
+app.get('/appointments/:id', authenticate, async (req, res) => {
   try {
-    const employee = await Employee.findById(req.params.id);
-    if (!employee) return res.status(404).json({ message: 'Employee not found' });
-    res.status(200).json(employee);
+    const appointment = await Appointment.findById(req.params.id);
+    if (!appointment) return res.status(404).json({ message: 'Appointment not found' });
+    res.status(200).json(appointment);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// Update an employee by ID
-app.put('/employees/:id', authenticate, async (req, res) => {
-  const { name, position, salary } = req.body;
+// Update an appointment by ID
+app.put('/appointments/:id', authenticate, async (req, res) => {
+  const { patientName, doctorName, appointmentDate, symptoms } = req.body;
   try {
-    const updatedEmployee = await Employee.findByIdAndUpdate(
+    const updatedAppointment = await Appointment.findByIdAndUpdate(
       req.params.id,
-      { name, position, salary },
+      { patientName, doctorName, appointmentDate, symptoms },
       { new: true }
     );
-    res.status(200).json(updatedEmployee);
+    res.status(200).json(updatedAppointment);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// Delete an employee by ID
-app.delete('/employees/:id', authenticate, async (req, res) => {
+// Delete an appointment by ID
+app.delete('/appointments/:id', authenticate, async (req, res) => {
   try {
-    await Employee.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: 'Employee deleted' });
+    await Appointment.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Appointment deleted' });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

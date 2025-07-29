@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Salary Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    select, input, button { margin: 5px 0; padding: 8px; width: 100%; }
+    .section { margin-bottom: 20px; }
+    .operation-form { display: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Employee Salary Management System</h1>
+
+  <div class="section">
+    <label for="operationSelect"><strong>Select Operation:</strong></label>
+    <select id="operationSelect">
+      <option value="">-- Select an Operation --</option>
+      <option value="add">Add Employee</option>
+      <option value="view">View Employees</option>
+      <option value="update">Update Employee</option>
+      <option value="delete">Delete Employee</option>
+      <option value="exit">Exit</option>
+    </select>
+    <button onclick="handleSubmit()">Submit</button>
+  </div>
+
+  <!-- Operation Forms -->
+
+  <!-- Add -->
+  <div id="addForm" class="operation-form">
+    <h3>Add Employee</h3>
+    <input type="text" id="addName" placeholder="Name">
+    <input type="text" id="addPosition" placeholder="Position">
+    <input type="number" id="addRate" placeholder="Hourly Rate">
+    <input type="number" id="addHours" placeholder="Hours Worked">
+    <button onclick="addEmployee()">Add</button>
+  </div>
+
+  <!-- View -->
+  <div id="viewForm" class="operation-form">
+    <h3>Employee Records</h3>
+    <button onclick="viewEmployees()">View All</button>
+    <ul id="employeeList"></ul>
+  </div>
+
+  <!-- Update -->
+  <div id="updateForm" class="operation-form">
+    <h3>Update Employee</h3>
+    <input type="number" id="updateId" placeholder="Employee ID">
+    <input type="text" id="updateName" placeholder="New Name (optional)">
+    <input type="text" id="updatePosition" placeholder="New Position (optional)">
+    <input type="number" id="updateRate" placeholder="New Hourly Rate (optional)">
+    <input type="number" id="updateHours" placeholder="New Hours Worked (optional)">
+    <button onclick="updateEmployee()">Update</button>
+  </div>
+
+  <!-- Delete -->
+  <div id="deleteForm" class="operation-form">
+    <h3>Delete Employee</h3>
+    <input type="number" id="deleteId" placeholder="Employee ID">
+    <button onclick="deleteEmployee()">Delete</button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function handleSubmit() {
+      const selected = document.getElementById('operationSelect').value;
+      const forms = document.querySelectorAll('.operation-form');
+      forms.forEach(form => form.style.display = 'none');
+
+      if (selected === 'exit') {
+        alert('Exiting System. Goodbye!');
+        return;
+      }
+
+      const formToShow = document.getElementById(selected + 'Form');
+      if (formToShow) formToShow.style.display = 'block';
+    }
+
+    async function addEmployee() {
+      const name = document.getElementById('addName').value;
+      const position = document.getElementById('addPosition').value;
+      const rate = parseFloat(document.getElementById('addRate').value);
+      const hours = parseFloat(document.getElementById('addHours').value);
+
+      await fetch('/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, position, hourlyRate: rate, hoursWorked: hours })
+      });
+
+      alert('Employee added!');
+    }
+
+    async function viewEmployees() {
+      const res = await fetch('/employees');
+      const employees = await res.json();
+      const list = document.getElementById('employeeList');
+      list.innerHTML = '';
+      employees.forEach(emp => {
+        const li = document.createElement('li');
+        li.textContent = `ID: ${emp.id}, Name: ${emp.name}, Salary: ₹${emp.salary}`;
+        list.appendChild(li);
+      });
+    }
+
+    async function updateEmployee() {
+      const id = document.getElementById('updateId').value;
+      const name = document.getElementById('updateName').value;
+      const position = document.getElementById('updatePosition').value;
+      const rate = document.getElementById('updateRate').value;
+      const hours = document.getElementById('updateHours').value;
+
+      await fetch(`/update/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, position, hourlyRate: rate, hoursWorked: hours })
+      });
+
+      alert('Employee updated!');
+    }
+
+    async function deleteEmployee() {
+      const id = document.getElementById('deleteId').value;
+      await fetch(`/delete/${id}`, { method: 'DELETE' });
+      alert('Employee deleted!');
+    }
+  </script>
+</body>
+</html>

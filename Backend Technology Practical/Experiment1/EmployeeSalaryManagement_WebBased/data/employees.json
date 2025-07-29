@@ -1,0 +1,50 @@
+[
+  {
+    "id": 4,
+    "name": "Siddhant Kumar",
+    "position": "Figma Developer",
+    "hourlyRate": 2000,
+    "hoursWorked": 8,
+    "salary": 16000
+  },
+  {
+    "id": 5,
+    "name": "Ayush Anand",
+    "position": "Backend Developer",
+    "hourlyRate": 1200,
+    "hoursWorked": 6,
+    "salary": 7200
+  },
+  {
+    "id": 6,
+    "name": "Raja Kumar",
+    "position": "SDE",
+    "hourlyRate": 3000,
+    "hoursWorked": 7,
+    "salary": 21000
+  },
+  {
+    "id": 7,
+    "name": "Raja Kumar",
+    "position": "FED",
+    "hourlyRate": 3000,
+    "hoursWorked": 7,
+    "salary": 21000
+  },
+  {
+    "id": 8,
+    "name": "Raja Ku",
+    "position": "FED",
+    "hourlyRate": 3004,
+    "hoursWorked": 7,
+    "salary": 21028
+  },
+  {
+    "id": 9,
+    "name": "fj",
+    "position": "incj",
+    "hourlyRate": 773,
+    "hoursWorked": 947,
+    "salary": 732031
+  }
+]

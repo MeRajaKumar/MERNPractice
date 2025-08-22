@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(200, 200, 200, 0.4);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      color: #333;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 500;
+      color: #444;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      color: #333;
+      transition: border 0.2s ease;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #4a90e2;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #3a78c2;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .extra a {
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: 500;
+    }
+
+    .extra a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 420px) {
+      .login-container {
+        width: 90%;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <div class="extra">
+      Don’t have an account? <a href="/signup">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1= title
+  p
+    a(href='/students/new') Add new student
+  if students && students.length
+    ul
+      each s in students
+        li
+          a(href=`/students/${s.id}`) #{s.name} (#{s.age}) — #{s.course}
+  else
+    p No students yet.

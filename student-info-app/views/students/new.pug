@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+  if error
+    p(style='color:red')= error
+  form(method='POST', action='/students')
+    div
+      label(for='name') Name
+      input#name(type='text', name='name', value=(values && values.name) || '')
+    div
+      label(for='age') Age
+      input#age(type='number', name='age', value=(values && values.age) || '')
+    div
+      label(for='course') Course
+      input#course(type='text', name='course', value=(values && values.course) || '')
+    button(type='submit') Save

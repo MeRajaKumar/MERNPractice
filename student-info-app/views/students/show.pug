@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1= title
+  ul
+    li strong Name: 
+      |  #{student.name}
+    li strong Age: 
+      |  #{student.age}
+    li strong Course: 
+      |  #{student.course}
+  p
+    a(href='/students') ← Back to list

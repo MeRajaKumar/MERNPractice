@@ -1,0 +1,31 @@
+<%- include('../partials/header', { title: 'Edit Employee' }) %>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Edit Employee</h3>
+        <form method="POST" action="/employees/edit/<%= employee._id %>">
+          <div class="mb-3">
+            <input type="text" class="form-control" name="name" value="<%= employee.name %>" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" name="email" value="<%= employee.email %>" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" name="role" value="<%= employee.role %>">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" name="department" value="<%= employee.department %>">
+          </div>
+          <div class="mb-3">
+            <input type="number" class="form-control" name="salary" value="<%= employee.salary %>">
+          </div>
+          <button class="btn btn-success w-100">Update Employee</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

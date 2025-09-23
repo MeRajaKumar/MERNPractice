@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body><!-- Hero Section -->
+  <section id="heroSection" class="hero-section">
+    <div class="hero-content">
+        <h1>University Course Management Dashboard</h1>
+        <p>Manage Departments, Courses, and Modules in one place.</p>
+        <div class="hero-stats-container">
+            <div class="stat-card">
+                <h3>Total Departments</h3>
+                <p id="deptCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Courses</h3>
+                <p id="courseCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Modules</h3>
+                <p id="moduleCount">0</p>
+            </div>
+        </div>
+        <div class="hero-buttons">
+            <button onclick="showSection('departments')">Departments</button>
+            <button onclick="showSection('courses')">Courses</button>
+            <button onclick="showSection('modules')">Modules</button>
+        </div>
+    </div>
+</section>
+
+  <section id="departmentsSection" class="section hidden">
+    <button onclick="showSection('hero')" class="back-btn">⬅ Back</button>
+    <h2>Departments</h2>
+    <div class="section-content">
+        <form id="deptForm">
+            <input type="text" id="deptName" placeholder="Department Name" required>
+            <button type="submit">Add Department</button>
+        </form>
+        <div class="search">
+            <input type="text" id="deptSearch" placeholder="Search Department by ID">
+            <button onclick="searchDepartment()">Search</button>
+        </div>
+        <div class="list" id="departmentsList"></div>
+    </div>
+</section>
+
+  <!-- Courses Section -->
+  <section id="coursesSection" class="section hidden fullpage">
+    <button onclick="showSection('hero')" class="back-btn">⬅ Back</button>
+    <h2>Courses</h2>
+    <div class="section-content">
+        <form id="courseForm">
+            <input type="text" id="courseName" placeholder="Course Name" required>
+            <select id="courseDeptSelect" required></select>
+            <button type="submit">Add Course</button>
+        </form>
+        <div class="search">
+            <input type="text" id="courseSearch" placeholder="Search Course by ID">
+            <button onclick="searchCourse()">Search</button>
+        </div>
+        <div class="list" id="coursesList"></div>
+    </div>
+</section>
+
+  <!-- Modules Section -->
+  <section id="modulesSection" class="section hidden fullpage">
+    <button onclick="showSection('hero')" class="back-btn">⬅ Back</button>
+    <h2>Modules</h2>
+    <div class="section-content">
+        <form id="moduleForm">
+            <input type="text" id="moduleTitle" placeholder="Module Title" required>
+            <select id="moduleCourseSelect" required></select>
+            <button type="submit">Add Module</button>
+        </form>
+        <div class="search">
+            <input type="text" id="moduleSearch" placeholder="Search Module by ID">
+            <button onclick="searchModule()">Search</button>
+        </div>
+        <div class="list" id="modulesList"></div>
+    </div>
+</section>
+
+<div id="editModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Edit Item</h2>
+        <form id="editForm">
+            <input type="text" id="editName" placeholder="New Name/Title" required>
+            <div class="modal-buttons">
+                <button type="submit" class="save-btn">Save</button>
+                <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Confirm Deletion</h2>
+        <p>Are you sure you want to delete this item?</p>
+        <div class="modal-buttons">
+            <button type="button" class="yes-btn">Yes</button>
+            <button type="button" class="no-btn">No</button>
+        </div>
+    </div>
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

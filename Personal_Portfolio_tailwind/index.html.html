@@ -1,0 +1,114 @@
+<!-- Portfolio Website: MoneySync using Tailwind CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raja Kumar | Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Raja Kumar</h1>
+      <ul class="flex gap-4">
+        <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#about" class="hover:text-gray-300">About</a></li>
+        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 text-center">
+    <img src="https://via.placeholder.com/150" alt="Profile" class="rounded-full w-40 h-40 mb-4">
+    <h2 class="text-4xl font-bold mb-2">Raja Kumar</h2>
+    <p class="text-xl italic text-gray-600 mb-4">"Coding the Future One Line at a Time"</p>
+    <a href="RajaKumar_Resume.pdf" download class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Download Resume</a>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 px-4 bg-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+      <p class="mb-4 text-gray-700">I'm a passionate full-stack web developer with a background in MCA from Chandigarh University. I love creating beautiful, responsive web apps and exploring the latest tech in UI/UX and JavaScript frameworks.</p>
+      <p class="mb-6 text-gray-700">When not coding, I enjoy learning design, reading, and building meaningful digital tools.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Skills</h3>
+          <ul class="list-disc ml-6 text-gray-600">
+            <li>HTML, CSS, JavaScript</li>
+            <li>MongoDB, Node.js</li>
+            <li>Tailwind CSS</li>
+            <li>React.js</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Education</h3>
+          <ul class="list-none text-gray-600">
+            <li><strong>MCA</strong> - Chandigarh University (2024)</li>
+            <li><strong>BCA</strong> - Bihar University (2021)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Project Card -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200" alt="MoneySync" class="mb-4 rounded">
+          <h3 class="text-xl font-semibold mb-2">MoneySync</h3>
+          <p class="text-sm text-gray-600 mb-2">Personal finance tracker built using JS, MongoDB. Tracks expenses, budgets, and savings goals.</p>
+          <a href="#" class="text-blue-600 hover:underline">View GitHub</a>
+        </div>
+        <!-- Add 2 More Dummy Projects -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200" alt="Project" class="mb-4 rounded">
+          <h3 class="text-xl font-semibold mb-2">Expense Visualizer</h3>
+          <p class="text-sm text-gray-600 mb-2">A chart-based visual representation of expenses using Chart.js and Tailwind layout.</p>
+          <a href="#" class="text-blue-600 hover:underline">View GitHub</a>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200" alt="Project" class="mb-4 rounded">
+          <h3 class="text-xl font-semibold mb-2">Responsive Dashboard</h3>
+          <p class="text-sm text-gray-600 mb-2">Mobile-friendly dashboard template using Tailwind and Flexbox layout patterns.</p>
+          <a href="#" class="text-blue-600 hover:underline">View GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 bg-gray-100">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+      <form class="flex flex-col gap-4">
+        <input type="text" placeholder="Name" class="p-3 rounded border border-gray-300">
+        <input type="email" placeholder="Email" class="p-3 rounded border border-gray-300">
+        <textarea placeholder="Message" rows="5" class="p-3 rounded border border-gray-300"></textarea>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+      <div class="flex justify-center gap-6 mt-6 text-gray-600">
+        <a href="#" class="hover:text-gray-800">LinkedIn</a>
+        <a href="#" class="hover:text-gray-800">GitHub</a>
+        <a href="#" class="hover:text-gray-800">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center p-4 mt-8">
+    <p>&copy; 2025 Raja Kumar. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

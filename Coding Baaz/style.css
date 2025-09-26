@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+:root{
+    --background:#0f0e0e;;
+    --second-bcg: #1D1D1D;
+    --text-color:#eeeeee;
+    --second-text-color: #f6c90e;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--text-color);
+}
+
+/* Navigation Container ⬇️ */
+.navContainer{
+    width: 100%;
+    height: 11vh;
+    background-color: var(--second-bcg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 28px;
+    padding-right: 35px;
+}
+.navContainer .navLogo, .navLogo a{
+    font-size: 1.9rem;
+    font-weight:780;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.navContainer nav ul li{
+    display: inline-block;
+    padding: 0 18px;
+}
+.navContainer nav ul li a{
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: 550;
+}
+.navContainer nav ul li .active{
+    color: var(--second-text-color);
+}
+.navContainer nav ul li a:hover{
+    color: var(--second-text-color);
+    transition: all 0.2s ease;
+
+}
+
+/*  All others stylings of Tags */
+#spanTxtClr{
+    color: var(--second-text-color);
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background: var(--background);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.containerTxtDiv{
+    text-align: center;
+}
+.containerTxtDiv h4{
+    padding: 6px;
+    font-size: 1.7rem;
+}
+.containerTxtDiv h1{
+    font-size: 2.4rem;
+}
+.about, .services, .contact{
+    background-color: var(--second-bcg);
+}
+
+/* Home Styling ⬇️ */
+.home{
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.homw .secondDiv img{
+    height: 400px;
+    width: 500px;
+    margin: 0px 65px;
+}
+.home .firstDiv{
+    width: 500px;
+}
+.home .firstDiv h4{
+    font-size: 1.3rem;
+}
+.home .firstDiv h1{
+    font-size: 2.4rem;
+    padding: 8px 0px 15px 0px;
+}
+.home .firstDiv p{
+    font-size: 1.2rem;
+    padding: 0px 0px 20px 0px;
+    line-height: 1.3;
+    
+}
+.home .firstDiv button{
+    padding: 10px 12px;
+    border-radius: 5px ;
+    border: none;
+    background-color: var(--second-text-color);
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+.home .firstDiv a{
+    text-decoration: none;
+    background-color: var(--second-text-color);
+    font-size: 20px;
+    color: var(--background);
+    font-weight: 600;
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+.home .firstDiv .linksDiv{
+    margin-top: 40px;
+    
+}
+.home .firstDiv .linksDiv a{
+    font-size: 1.5rem;
+    color: #0f0e0e;
+    background-color: #f6c90e;
+    padding: 8px;
+    border-radius: 100%;
+    margin: 2px;
+}
+
+/* About Styling ⬇️ */
+.about{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+} .firstDiv img{
+    height: 400px;
+    width: 500px;
+    margin: 0px 65px;
+}
+.about .secondDiv{
+    width: 500px;
+}
+.about .secondDiv h4{
+    font-size: 1.3rem;
+}
+.about .secondDiv h1{
+    font-size: 2.4rem;
+    padding: 8px 0px 15px 0px;
+}
+.about .secondDiv p{
+    font-size: 1.2rem;
+    padding: 0px 0px 20px 0px;
+    line-height: 1.3;
+    
+}
+.about .secondDiv button{
+    padding: 10px 12px;
+    border-radius: 5px ;
+    border: none;
+    background-color: var(--second-text-color);
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+.about .secondDiv a{
+    text-decoration: none;
+    background-color: var(--second-text-color);
+    font-size: 20px;
+    color: var(--background);
+    font-weight: 600;
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+
+/* Skill Styling ⬇️ */
+.skill{
+    height: 85vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.skill .firstDiv{
+    width: 350px;
+}
+.skill .firstDiv h4{
+    font-size: 1.3rem;
+}
+.skill .firstDiv h1{
+    font-size: 2.4rem;
+    padding: 8px 0px 15px 0px;
+}
+.skill .firstDiv p{
+    font-size: 1.2rem;
+    padding: 0px 0px 20px 0px;
+    line-height: 1.3;
+    
+}
+.skill .firstDiv button{
+    padding: 10px 12px;
+    border-radius: 5px ;
+    border: none;
+    background-color: var(--second-text-color);
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+.skill .firstDiv a{
+    text-decoration: none;
+    background-color: var(--second-text-color);
+    font-size: 20px;
+    color: var(--background);
+    font-weight: 600;
+    &:hover{
+        background-color: var(--text-color);
+        transition: all 0.2s ease;
+    }
+}
+.skill .secondDiv{
+    width: 450px;
+    padding-left: 45px;
+}
+.skill .secondDiv ol li{
+    padding: 15px 0px;
+    font-size: 1.5rem;
+    counter-increment: item;
+    margin-bottom: px;
+}
+.skill .secondDiv ol{
+    list-style: none;
+    counter-reset: item;
+}
+.skill .secondDiv ol li:before {
+    margin-right: 12px;
+    content: counter(item);
+    background: var(--second-text-color);
+    border-radius: 50%;
+    color: #0f0e0e;
+    width: 1.1em;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 2px 2px 2px;
+    font-weight: 600;
+  }
+
+/* Services Conatiner */
+.services .containerIteamsDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+}
+
+.containerIteamsDiv  .divIteams{
+    height: 350px;
+    width: 360px;
+    background: var(--background);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px; 
+}
+.containerIteamsDiv  .divIteams i{
+    font-size: 80px;
+    color: var(--second-text-color);
+    &:hover{
+        font-size: 95px;
+        transition: all 0.2s ease-in;
+    }
+}
+.containerIteamsDiv  .divIteams h1{
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+.containerIteamsDiv  .divIteams p{
+    font-size: 17px;
+    text-align: center;
+    color: #777777;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* Project Conatiner */
+.projects .containerIteamsDiv{
+    height: 75vh;
+    width: 80%;
+    /* background-color: var(--second-bcg); */
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-wrap:  wrap;
+    flex-direction: column;
+    margin-top: 0px;
+}
+.containerIteamsDiv .divIteam{
+    height: 220px;
+    width: 360px;
+    margin: 20px;
+    background-color: var(--second-bcg);
+    border-radius: 10px;
+}
+.containerIteamsDiv .divIteam img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* contact styling ⬇️ */
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact > .containerIteamsDiv{
+    background-color: var(--background);
+    height: 60vh;
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact  .containerIteamsDiv #contactTxt{
+    width: 300px ;
+    height: 50px;
+    margin: 25px;
+    font-size: 20px;
+    background-color: #1D1D1D;
+    padding: 15px;
+    color: #eeeeee;
+    border: none;
+    border-radius: 7px;
+}
+.contact .containerIteamsDiv #contactTxt22{
+    margin-top: 15px;
+    height: 225px;
+    width: 450px;
+    font-size: 20px;
+    background-color: #1D1D1D;
+    padding: 15px;
+    color: #eeeeee;
+    border: none;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.contact #contactBtn{
+    margin-top: 20px;
+    background-color: var(--text-color);
+    font-size: 20px;
+    padding: 13px 25px;
+    color: #0f0e0e;
+    font-weight: 600;
+    border-radius: 5px ;
+    border: none;
+    &:hover{
+        background-color: var(--second-text-color);
+        transition: all 0.2s ease;
+    }
+}
+
+/* footer styling ⬇️ */
+.footer{
+    background-color: #0f0e0e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 32vh;
+    width: 100%;
+  }
+  .footerDiv{
+    height: auto;
+    width: auto;
+    text-align: center;
+    color: #eeeeee;
+  }
+  .footerDiv > a{
+    font-size: 32px;
+    color: var(--text-color);
+    margin: 10px;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    &:hover{
+        color: var(--second-text-color);
+        transition: all 0.2s ease;
+    }
+  }
+.footerDiv h1{
+    padding: 8px 0px;
+}
+.footerDiv h1 a{
+    text-decoration: none;
+}
+
+/* Design By Container */
+.designByContainer{
+    height: 5vh;
+    width: 100%;
+    background: var(--second-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.designByContainer h3,.designByContainer h3 a{
+    color: var(--background);
+}
+  

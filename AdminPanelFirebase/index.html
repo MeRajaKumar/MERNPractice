@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ======================================================= */
+        /* UI FIXES & PROFESSIONAL LANDING PAGE STYLES */
+        /* ======================================================= */
+        body {
+            display: block;
+            min-height: 100vh;
+            /* Screen ki poori height use karein */
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .hero-section {
+            /* Full-width color aur gradient */
+            background: linear-gradient(135deg, #0f3460 0%, #1a568c 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 20px 100px;
+            /* Top/Bottom padding badhaya */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section h1 {
+            font-size: 2.8em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* --- Card Alignment FIX --- */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            /* Cards ko horizontal middle mein laayein */
+            gap: 30px;
+            margin-top: -80px;
+            /* Hero section ke upar uthaya */
+            margin-bottom: 50px;
+            max-width: 1000px;
+            /* Cards ko ek limit mein rakhen */
+            margin-left: auto;
+            /* Left margin auto */
+            margin-right: auto;
+            /* Right margin auto -> Center */
+        }
+
+        .access-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #0f3460;
+            flex-grow: 1;
+        }
+
+        .access-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation Icon (Close Button) */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .close-btn:hover {
+            background-color: #eee;
+        }
+
+        /* Custom Button Colors inside the overlay */
+        #login-section #login-btn {
+            background-color: #0f3460 !important;
+        }
+
+        #toggle-signup-btn {
+            background-color: #28a745 !important;
+        }
+
+        /* Overlay and Form */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .login-form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            position: relative;
+        }
+
+        .registration-form-box {
+            background-color: #f8f9fa;
+            /* Light Gray background for registration forms */
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        /* Style for the back-to-login link */
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Registration Form Button Color */
+        #student-signup-btn {
+            background-color: #008080 !important;
+        }
+
+        /* Teal */
+        #admin-signup-btn {
+            background-color: #008080 !important;
+        }
+
+        /* Teal */
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-section">
+        <h1>University Management Portal</h1>
+        <p>Your centralized platform for academic and administrative services.</p>
+    </div>
+
+    <div class="card-container">
+
+        <div class="access-card">
+            <h3>Student Access</h3>
+            <p>View marks, attendance, schedule, and update profile.</p>
+            <button id="show-student-login-btn">Login / Register</button>
+        </div>
+
+        <div class="access-card">
+            <h3>Teacher Access</h3>
+            <p>Manage users, add students, update grades, and control data.</p>
+            <button id="show-admin-login-btn">Login / Register</button>
+        </div>
+
+        <div class="access-card">
+            <h3>LMS Portal</h3>
+            <p>Access learning materials, lecture notes, and online resources.</p>
+            <button onclick="openLMS()" style="background-color: #007bff;">Go to LMS</button>
+        </div>
+    </div>
+
+
+    <div id="form-overlay" class="form-overlay">
+        <div id="login-form-box" class="login-form-box">
+            <span class="close-btn" onclick="closeForm()"><i class="fas fa-times"></i></span>
+            <h2 id="form-title"></h2>
+
+            <div id="login-section">
+                <input type="email" id="email" placeholder="Email (Registered Account)">
+                <input type="password" id="password" placeholder="Password">
+                <button id="login-btn" style="width: 48%; float: left; margin-right: 4%;">Login</button>
+                <button id="toggle-signup-btn" style="width: 48%; float: left;">Register</button>
+                <div style="clear: both;"></div>
+            </div>
+
+            <!-- <hr style="margin: 20px 0;"> -->
+
+            <div id="student-signup-section" style="display: none;">
+                <div class="registration-form-box">
+
+                    <input type="email" id="signup-email" placeholder="Email (Login ID)">
+                    <input type="password" id="signup-password" placeholder="Password (min 6 chars)">
+                    <input type="text" id="signup-name" placeholder="Full Name">
+                    <input type="text" id="signup-dob" placeholder="DOB (YYYY-MM-DD)">
+                    <input type="text" id="signup-mobile" placeholder="Mobile Number">
+
+                    <button id="student-signup-btn">Create Student Account</button>
+                    <p id="student-signup-message" style="margin-top: 10px;"></p>
+                    <a href="javascript:void(0)" onclick="toggleForms('login')">← Back to Login</a>
+                </div>
+            </div>
+
+            <div id="admin-signup-section" style="display: none;">
+                <div class="registration-form-box">
+
+                    <input type="email" id="admin-signup-email" placeholder="Email (Login ID)">
+                    <input type="password" id="admin-signup-password" placeholder="Password (min 6 chars)">
+                    <input type="text" id="admin-signup-name" placeholder="Full Name">
+                    <input type="text" id="admin-signup-mobile" placeholder="Mobile Number">
+                    <input type="text" id="admin-signup-subject" placeholder="Subject Taught">
+
+                    <button id="admin-signup-btn">Create Teacher Account</button>
+                    <p id="admin-signup-message" style="margin-top: 10px;"></p>
+                    <a href="javascript:void(0)" onclick="toggleForms('login')">← Back to Login</a>
+                </div>
+            </div>
+
+            <p id="error-message" style="color:red; margin-top: 15px;"></p>
+
+        </div>
+    </div>
+
+
+    <script>
+        // --- UI Variables (Local to index.html) ---
+        const formOverlay = document.getElementById('form-overlay');
+        const loginSection = document.getElementById('login-section');
+        const studentSignupSection = document.getElementById('student-signup-section');
+        const adminSignupSection = document.getElementById('admin-signup-section');
+        const formTitle = document.getElementById('form-title');
+        const showStudentLoginBtn = document.getElementById('show-student-login-btn');
+        const showAdminLoginBtn = document.getElementById('show-admin-login-btn');
+        const toggleSignupBtn = document.getElementById('toggle-signup-btn');
+        const errorMessage = document.getElementById('error-message');
+
+        window.currentRole = 'student'; // Global variable set for app.js to read
+
+        // --- UI Functions ---
+
+        function openForm(role) {
+            formOverlay.style.display = 'flex';
+            window.currentRole = role;
+            toggleForms('login'); // Hamesha pehle login dikhao
+        }
+
+        function closeForm() {
+            formOverlay.style.display = 'none';
+            errorMessage.textContent = '';
+            // Clear inputs and messages when closing
+        }
+
+        function toggleForms(view) {
+            loginSection.style.display = 'none';
+            studentSignupSection.style.display = 'none';
+            adminSignupSection.style.display = 'none';
+
+            // Toggle Register button visibility based on role
+            if (toggleSignupBtn) {
+                // Register button tabhi dikhega jab Student OR Admin role select ho
+                toggleSignupBtn.style.display = 'inline-block';
+            }
+
+
+            if (view === 'login') {
+                loginSection.style.display = 'block';
+                formTitle.textContent = window.currentRole === 'admin' ? 'Teacher/Admin Login' : 'Student Login';
+            } else if (view === 'student-signup') {
+                studentSignupSection.style.display = 'block';
+                formTitle.textContent = 'Student Registration';
+            } else if (view === 'admin-signup') {
+                adminSignupSection.style.display = 'block';
+                formTitle.textContent = 'Teacher/Admin Registration';
+            }
+        }
+
+        function openLMS() {
+            alert('LMS portal feature will be implemented soon!');
+        }
+
+        // --- Event Listeners for new buttons ---
+        showStudentLoginBtn.addEventListener('click', () => openForm('student'));
+        showAdminLoginBtn.addEventListener('click', () => openForm('admin'));
+
+        // 'toggle-signup-btn' click hone par role ke anusaar sahi signup form dikhega
+        toggleSignupBtn.addEventListener('click', () => {
+            const signupView = window.currentRole === 'admin' ? 'admin-signup' : 'student-signup';
+            toggleForms(signupView);
+        });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

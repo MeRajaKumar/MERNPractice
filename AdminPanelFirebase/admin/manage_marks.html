@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Marks</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Manage Student Marks & Grades</h2>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <p>Return to: <a href="dashboard.html">Admin Dashboard</a></p>
+
+        <hr>
+
+        <h3>Select Student</h3>
+        <select id="student-selector">
+            <option value="">-- Select a student --</option>
+            </select>
+        
+        <div id="marks-entry" style="display: none; margin-top: 20px;">
+            <h4>Enter Marks for <span id="selected-student-name"></span></h4>
+            
+            <input type="text" id="subject-name" placeholder="Subject Name (e.g., DSA)">
+            <input type="text" id="marks-obtained" placeholder="Marks Obtained (e.g., 85)">
+            <input type="text" id="marks-total" placeholder="Total Marks (e.g., 100)">
+            
+            <button id="save-marks-btn" style="background-color: #007bff;">Save Marks</button>
+            <p id="marks-message" style="margin-top: 10px;"></p>
+        </div>
+        
+        <div id="existing-marks" style="margin-top: 30px;">
+            <h4>Existing Records:</h4>
+            <ul id="marks-list">
+                </ul>
+        </div>
+        
+    </div>
+    
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

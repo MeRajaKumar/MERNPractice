@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <style>
+        /* Specific Styles for Profile Page */
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .profile-details p {
+            font-size: 1.1em;
+            padding: 5px 0;
+            border-bottom: 1px dotted #eee;
+        }
+        .change-pass-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ffcc00;
+            background-color: #fffde7;
+            border-radius: 4px;
+        }
+        .change-pass-section button {
+            background-color: #007bff; /* Blue */
+            margin-top: 15px;
+        }
+        .change-pass-section button:hover {
+            background-color: #0056b3;
+        }
+        .nav-links a {
+            padding: 8px 15px;
+            background-color: #5cb85c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .nav-links a:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        
+        <div class="nav-links">
+            <a href="dashboard.html">🏠 Home (Dashboard)</a>
+        </div>
+        
+        <div class="header" style="margin-top: 20px;">
+            <h2>My Profile & Account Settings</h2>
+            <button id="student-logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <hr>
+
+        <div class="profile-details">
+            <h4>Personal Details</h4>
+            <p><strong>Name:</strong> <span id="student-name-display">Loading...</span></p>
+            <p><strong>Email (Login ID):</strong> <span id="student-email-display">Loading...</span></p>
+            <p><strong>Course Enrolled:</strong> <span id="student-course-display">Loading...</span></p>
+            <p><strong>UID:</strong> <span id="student-uid-display">Loading...</span></p>
+        </div>
+
+        <div class="change-pass-section">
+            <h4>Change Password</h4>
+            <p>For security, you need to enter your current password to set a new one.</p>
+            
+            <input type="password" id="current-password" placeholder="Current Password">
+            <input type="password" id="new-password" placeholder="New Password (min 6 chars)">
+            <input type="password" id="confirm-new-password" placeholder="Confirm New Password">
+            
+            <button id="update-password-btn">Update Password</button>
+            <p id="password-message" style="margin-top: 10px;"></p>
+        </div>
+
+    </div>
+    
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* Styles specific to the Admin Dashboard layout */
+        .admin-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .control-button {
+            padding: 10px 15px;
+            background-color: #3f51b5; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .control-button:hover {
+            background-color: #30408d;
+        }
+        .student-list-card {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .user-card-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .user-card-item:last-child {
+            border-bottom: none;
+        }
+        .user-info {
+            text-align: left;
+        }
+        .user-info strong {
+            display: block;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .action-btn {
+            padding: 5px 10px;
+            background-color: #dc3545; /* Red for Delete */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .action-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Admin/Teacher Dashboard</h2>
+            <p>Welcome, <span id="user-email">Loading Admin Email...</span></p>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <div class="admin-controls">
+            <a href="add_student.html" class="control-button">➕ Add New Student</a>
+            <a href="manage_marks.html" class="control-button">📝 Manage Marks/Grades</a>
+            </div>
+
+        <hr>
+
+        <div class="student-list-card">
+            <h3>Registered Student List</h3>
+            <p>Total Students: <span id="total-students-count">0</span></p>
+            
+            <div id="data-display">
+                <p>Fetching student records...</p>
+                </div>
+        </div>
+
+    </div>
+
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

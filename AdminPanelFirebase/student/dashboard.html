@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <style>
+        /* Styles for this specific view (if any) */
+        .dashboard-container { max-width: 1000px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .info-card { padding: 15px; border: 1px solid #eee; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="header">
+            <h2>Welcome Back, <span id="student-name-display">Student!</span></h2>
+            <button id="student-logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <div class="info-card">
+            <h4>Profile Information | <a href="profile.html">Update Password</a></h4>
+            <p><strong>Email:</strong> <span id="student-email-display">Loading...</span></p>
+            <p><strong>Course:</strong> <span id="student-course-display">Loading...</span></p>
+            <p><strong>UID:</strong> <span id="student-uid-display">Loading...</span></p>
+        </div>
+
+        <div class="grid-container">
+            
+            <div class="info-card">
+                <h4>Marks & Grades</h4>
+                <div id="student-marks"></div>
+            </div>
+
+            <div class="info-card">
+                <h4>Attendance Summary</h4>
+                <div id="student-attendance"></div>
+            </div>
+
+            <div class="info-card">
+                <h4>Upcoming Exam Dates</h4>
+                <div id="student-schedule"></div>
+            </div>
+            
+            <div class="info-card">
+                <h4>Announcements</h4>
+                <div id="student-announcements"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

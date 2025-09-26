@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Quizify</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+  <h1>Test Your Knowledge with <span>AI Quizzes</span></h1>
+  <p>Choose your subject, select difficulty, and challenge yourself! 🚀</p>
+  <button id="heroStartBtn">Start Test</button>
+  <div class="hero-image">
+    <img src="https://via.placeholder.com/500x300.png?text=AI+Quiz" alt="Quiz Illustration">
+  </div>
+</section>
+
+<!-- Subject Dashboard -->
+<div id="subjectDashboard" style="display:none;">
+         <button id="backBtn">← Back</button>  <!-- 👈 Back button added -->
+  <h2>Select a Subject</h2>
+  <div class="cards-container">
+    <!-- Example Cards -->
+    <div class="subject-card" data-subject="math">
+      <img src="https://img.icons8.com/emoji/96/math-emoji.png" alt="Math Logo">
+      <h3>Math</h3>
+    </div>
+
+    <div class="subject-card" data-subject="science">
+      <img src="https://img.icons8.com/color/96/science.png" alt="Science Logo">
+      <h3>Science</h3>
+    </div>
+
+    <!-- Add more subjects here -->
+  </div>
+</div>
+
+
+    <!-- Setup Area -->
+    <!-- <div id="setup" style="display:none;">
+        <label>Choose Subject:</label>
+        <select id="subject">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+        </select>
+
+        <label>Choose Difficulty:</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <button id="startBtn">Start Quiz</button>
+    </div> -->
+
+    <!-- Quiz Area -->
+    <div id="quiz" style="display:none;">
+        <h2 id="question"></h2>
+        <div id="options"></div>
+        <button id="nextBtn" style="display:none;">Next</button>
+    </div>
+
+    <!-- Result Area -->
+    <div id="result" style="display:none;">
+        <h2>Your Score: <span id="score"></span></h2>
+        <button id="restartBtn">Restart</button>
+    </div>
+
+    <script src="questions/math.js"></script>
+    <script src="questions/science.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

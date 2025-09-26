@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Welcome to Coding Baaz</title>
+</head>
+<body>
+    <!-- Navigation Container ⬇️-->
+    <header class="navContainer">
+        <h1 class="navLogo"><a href="#homeConatiner">Coding<span id="spanTxtClr">Baaz</span></a></h1>
+        <nav>
+            <ul class="navItems">
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#aboutContainer">ABOUT</a></li>
+                <li><a href="#skillContainer">SKILL</a></li>
+                <li><a href="#servicesContainer">SERVICES</a></li>
+                <li><a href="#projectsContainer">PROJECTS</a></li>
+                <li><a href="#contactContainer">CONTACT</a></li>                  
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Container ⬇️-->
+    <section class="home container" id="homeContainer">
+        <div class="firstDiv">
+            <h4>My <span id="spanTxtClr">Intro</span></h4>
+            <h1>About Me</h1>
+            <p>Frontend developer, I create web pages with UI / UX user interfaces. I have years of experience and many clients area happy with the projects carried out.</p>
+            <button type="button"><a href="#contactContainer">Contact Me</a></button>
+
+            <div class="linksDiv">
+                <a href="https://www.instagram.com/MeAayushGupta" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://github.com/MeRajaKumar" target="_blank" class="fa fa-github"></a>
+                <a href="https://www.linkedin.com/in/MeRajaKumar"  target="_blank" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="secondDiv">
+            <img src="png1.png" alt="img not found">
+        </div>
+    </section>
+
+    <!-- about Container ⬇️-->
+    <section class="about container" id="aboutContainer">
+        <div class="firstDiv">
+            <img src="png3.png" alt="img not found">
+        </div>
+        <div class="secondDiv">
+            <h4>My <span id="spanTxtClr">Intro</span></h4>
+            <h1>About Me</h1>
+            <p>Frontend developer, I create web pages with UI / UX user interfaces. I have years of experience and many clients area happy with the projects carried out.</p>
+            <button type="button"><a href="#contactContainer">Contact Me</a></button>
+        </div>
+    </section>
+
+    <!-- slill Container ⬇️-->
+    <section class="skill container" id="skillContainer">
+        <div class="firstDiv">
+            <h4>Favorite <span id="spanTxtClr">Skills</span></h4>
+            <h1>My Skills</h1>
+            <p>See fully what skills I have and perform to develop the projects fo you.</p>
+            <button type="button"><a href="#projectsContainer">See Projects</a></button>
+        </div>
+        <div class="secondDiv">
+            <ol>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Git & Gthub</li>
+                <li>Figma</li>
+                <li>C Language</li>
+                <li>Bootstrap</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- services Container ⬇️-->
+    <section class="services container" id="servicesContainer">
+        <div class="containerTxtDiv">
+            <h4>My <span id="spanTxtClr">Services</span></h4>
+            <h1>What I Do</h1>
+        </div>
+        <div class="containerIteamsDiv">
+            <div class="divIteams">
+                <i class="ri-layout-line"></i>
+                <h1>Web Developer</h1>
+                <p>i am very poor students i am doing my graduation from xyz college in madhepura.</p>   
+            </div>
+            <div class="divIteams">
+                <i class="ri-apps-fill"></i>
+                <h1>UX/UI Designer</h1>
+                <p>i am very poor students i am doing my graduation from xyz college in madhepura.</p>
+            </div>
+            <div class="divIteams">
+                <i class="ri-pen-nib-line"></i>
+                <h1>Graphic Designer</h1>
+                <p>i am very poor students i am doing my graduation from xyz college in madhepura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects Container ⬇️-->
+    <section class="projects container" id="projectsContainer">
+        <div class="containerTxtDiv">
+            <h4>My <span id="spanTxtClr">Jobs</span></h4>
+            <h1>Recent Projects</h1>
+        </div>
+        <div class="containerIteamsDiv">
+            <div class="divIteam">
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB5sAC-ZVpYbXN1xL0s52r71qkgTYgytgLMt9Wkl6fFA&usqp=CAU&ec=48600113" alt="" srcset=""></a>
+            </div>
+            <div class="divIteam">
+                <a href="#" ><img src="data:image/jpeg;base64,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" alt="" srcset=""></a>
+            </div>
+            <div class="divIteam">
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3dcoG6OT-Ezf5UNQw7FY3ebZMr5A894cL7rsJd1qMCA&usqp=CAU&ec=48600113" alt="" srcset=""></a>
+            </div>
+            <div class="divIteam">
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSH15G3dAxt9qHm36UZtCZZbdC24CQh4UsD5Vp5RngACKiVA1TZ0ressdfkASfONeTlfCneOtHxY&usqp=CAU&ec=48600113" alt="" srcset=""></a>
+            </div>
+            <div class="divIteam">
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIdILzQbalE7e07w7w3ai1kiM0DxVqXKV2CvpE_D9yeQ&usqp=CAU&ec=48600113" alt="" srcset=""></a>
+            </div>
+            <div class="divIteam">
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hJbwZBKFVxX7h4bvVqA7JirSqqMmpiEd4IL8vbd5B3tWX73vqiiod1D7YgUtLzUhApQZEv66j5U&usqp=CAU&ec=48600113" alt="" srcset=""></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact Container ⬇️-->
+    <section class="contact container" id="contactContainer">
+        <div class="containerTxtDiv">
+            <h4>Get in <span id="spanTxtClr">Touch</span></h4>
+            <h1>Contact me</h1>
+        </div>
+        <div class="containerIteamsDiv">
+            <div>
+                <input type="text" id="contactTxt" placeholder="Enter Your Name">
+                <input type="email" id="contactTxt" placeholder="Enter Your Email"><br>
+            </div>
+            <textarea id="contactTxt22" placeholder="Enter Your Message"></textarea>
+        </div>
+        <button id="contactBtn">Send Message</button>
+    </section>
+
+    <!-- Details container footer ⬇️ -->
+    <footer class="footer">
+        <div class="footerDiv first">
+            <h1><a href="#homeConatiner">Coding<span id="spanTxtClr">Baaz</span></a></h1>
+            <h2>Designer & Developer</h2>
+        </div>
+        <div class="footerDiv icons">
+            <a href="https://www.instagram.com/MeAayushGupta" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.facebook.com/meguptaaayush" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://www.linkedin.com/in/MeRajaKumar"  target="_blank" class="fa fa-linkedin"></a>
+        </div>
+        <div class="footerDiv">
+            <p>&copy; All Copy Right Reserved | Design By Aayush Gupta</p>
+        </div>
+    </footer>
+    <section class="designByContainer">
+        <h3>Design By <a href="https://github.com/MeRajaKumar" target="_blank" id="CopyLink">Aayush Gupta</a></h3>
+    </section>
+</body>
+</html>

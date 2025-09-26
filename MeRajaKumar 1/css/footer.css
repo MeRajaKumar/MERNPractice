@@ -1,0 +1,22 @@
+.footer{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+     height:30vh;
+     width:100%;
+     background-color: var(--bcg-clr2);
+   }
+   .first a{
+     text-decoration: none;
+     color: var(--txt-clr);
+     font-size: 38px;
+     font-weight: 800;
+   }
+   .second p{
+     color: var(--txt-clr);
+     font-size: 1.2rem;
+   }
+ 
+   

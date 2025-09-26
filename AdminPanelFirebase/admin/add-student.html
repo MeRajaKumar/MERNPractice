@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Student</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Add New Student/User</h2>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <p>Return to: <a href="dashboard.html">Admin Dashboard</a></p>
+        
+        <hr>
+
+        <div id="add-student-form">
+            <h3>Student Profile & Credentials</h3>
+            <input type="text" id="new-name" placeholder="Full Name">
+            <input type="email" id="new-email" placeholder="Email (Used for Login)">
+            <input type="text" id="new-course" placeholder="Course Enrolled (e.g., BCA, MCA)">
+            <input type="password" id="new-password" placeholder="Temporary Password (min 6 chars)">
+            
+            <button id="register-btn">Register Student (Auth + Database)</button>
+            <p id="registration-message" style="margin-top: 10px;"></p>
+        </div>
+        
+    </div>
+    
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

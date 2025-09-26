@@ -1,0 +1,52 @@
+.about{
+     display: flex;
+     justify-content: space-evenly;
+     flex-direction: row;
+     height: 110vh;
+}
+.about .firstDiv{
+     height: 100vh;
+     width: 40%;
+     /* background-color: aqua; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-right: 5px;
+}
+.about .firstDiv img{
+     height: 510px;
+     width: 400px;
+     box-shadow: -1.1rem -1.1rem 0 0 grey;
+     display: inline-block;
+}
+.about .secondDiv{
+     height: 100vh;
+     width: 40%;
+     /* background-color: rgb(13, 73, 73); */
+}
+.common-heading::before {
+     content: "";
+     position: absolute;
+     top: 110%;
+     left: 0;
+     width: 1.5rem;
+     height: 1.5rem;
+     border-radius: 50%;
+     background-color: pink;
+ }
+ .common-heading::after {
+     content: "";
+     position: absolute;
+     top: 118%;
+     left: 1.5rem;
+     min-width: 20rem;
+     height: 0.3rem;
+     background-color: pink;
+ }
+ .common-heading {
+     font-size: 2.2rem;
+     font-weight: 600;
+     margin-bottom: 6rem;
+     text-transform: capitalize;
+     position: relative;
+ }
